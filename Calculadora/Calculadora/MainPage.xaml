@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModel="clr-namespace:Calculadora.ViewModels"
+             mc:Ignorable="d"
+             BackgroundColor="CadetBlue"
+             x:Class="Calculadora.MainPage">
+    <ContentPage.BindingContext>
+        <viewModel:CalculadoraViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="10" >
+        <StackLayout  BackgroundColor="LightGray"        >
+            <Label  Padding="0"
+               BackgroundColor="LightGray"             
+               TextColor="Gray" 
+               FontSize="30" 
+               Text="{Binding Numero, Mode=TwoWay}"
+               HorizontalTextAlignment="End"
+               IsEnabled="False"
+                VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"
+               FontAttributes="Bold"/>
+            <Label  Padding="0"
+               BackgroundColor="LightGray"             
+               TextColor="Gray" 
+               FontSize="20" 
+               Text="{Binding Resultado, Mode=TwoWay}"
+               HorizontalTextAlignment="End"
+               IsEnabled="False"
+                VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"
+               FontAttributes="Bold"/>
+        </StackLayout>
+        
+        <Grid Padding="10" HorizontalOptions="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" TextColor="White" Text="HECTOR REYES " Padding="10" />
+            <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Text="" BackgroundColor="Gray" WidthRequest="30 " HeightRequest="30"  VerticalOptions="Center" Padding="10" />
+
+            <Button Grid.Row="1" Grid.Column="0" Text="%" Style="{StaticResource buttonOperations}" Command="{Binding OperationButtonCommand}" CommandParameter="%"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="7" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="7" />
+            <Button Grid.Row="1" Grid.Column="2" Text="8" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="8"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="9" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="9"/>
+            <Button Grid.Row="1" Grid.Column="4" Text="/" Style="{StaticResource buttonOperations}" Command="{Binding OperationButtonCommand}" CommandParameter="/"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Text="R" Style="{StaticResource buttonOperations}" Command="{Binding OperationButtonCommand}" CommandParameter="R" />
+            <Button Grid.Row="2" Grid.Column="1" Text="4" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="4"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="5" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="5"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="6" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="6"/>
+            <Button Grid.Row="2" Grid.Column="4" Text="X"  Style="{StaticResource buttonOperations}" Command="{Binding OperationButtonCommand}" CommandParameter="X"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Text="CE" Style="{StaticResource buttonOperations}" Command="{Binding OperationButtonCommand}" CommandParameter="CE" />
+            <Button Grid.Row="3" Grid.Column="1" Text="1" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="1"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="2" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="2"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="3" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="3"/>
+            <Button Grid.Row="3" Grid.Column="4" Text="-"  Style="{StaticResource buttonOperations}" FontSize="40" Command="{Binding OperationButtonCommand}" CommandParameter="-" />
+
+            <Button Grid.Row="4" Grid.Column="0" Text="ON/C" Style="{StaticResource buttonOperations}" BackgroundColor="PaleVioletRed" Command="{Binding OperationButtonCommand}" CommandParameter="ON/C" />
+            <Button Grid.Row="4" Grid.Column="1" Text="0" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="0"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="." Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="."/>
+            <Button Grid.Row="4" Grid.Column="3" Text="+/-" Style="{StaticResource buttonNumber}" FontSize="25" Command="{Binding OperationButtonCommand}" CommandParameter="+/-"/>
+            <Button Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Text="+"   Style="{StaticResource buttonLarge}" HeightRequest="120" Command="{Binding OperationButtonCommand}" CommandParameter="+"/>
+
+            <Button  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Text="=" Style="{StaticResource buttonLarge}" WidthRequest="180" Command="{Binding OperationButtonCommand}" CommandParameter="=" />
+            
+        </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>

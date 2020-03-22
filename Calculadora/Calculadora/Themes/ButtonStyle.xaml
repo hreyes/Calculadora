@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Calculadora.Themes.ButtonStyle"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style x:Key="buttonOperations" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="CornerRadius" Value="40" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="WidthRequest" Value="60" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+    </Style>
+
+    <Style x:Key="buttonNumber" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="WidthRequest" Value="60" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="BackgroundColor" Value="LightBlue" />
+    </Style>
+
+    <Style x:Key="buttonLarge" TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+    </Style>
+</ResourceDictionary>
