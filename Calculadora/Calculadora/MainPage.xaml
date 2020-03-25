@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewModel="clr-namespace:Calculadora.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
              mc:Ignorable="d"
              BackgroundColor="CadetBlue"
              x:Class="Calculadora.MainPage">
@@ -13,6 +15,7 @@
         <Frame BackgroundColor="LightGray"   CornerRadius="20" Padding="5" Margin="10">
         <StackLayout  BackgroundColor="LightGray"        >
             <Label  TextColor="Gray" 
+                    HeightRequest="30"
                FontSize="30"                
                Text="{Binding Numero, Mode=TwoWay}"
                HorizontalTextAlignment="End"
@@ -22,6 +25,7 @@
                FontAttributes="Bold"/>
             <Label   TextColor="Gray" 
                FontSize="20" 
+                     HeightRequest="30"
                Text="{Binding Resultado, Mode=TwoWay}"
                HorizontalTextAlignment="End"
                IsEnabled="False"
@@ -72,7 +76,7 @@
             <Button Grid.Row="4" Grid.Column="1" Text="0" Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="0"/>
             <Button Grid.Row="4" Grid.Column="2" Text="." Style="{StaticResource buttonNumber}" Command="{Binding NumericButtonCommand}" CommandParameter="."/>
             <Button Grid.Row="4" Grid.Column="3" Text="+/-" Style="{StaticResource buttonNumber}" FontSize="25" Command="{Binding NumericButtonCommand}" CommandParameter="+/-"/>
-            <Button Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Text="+"   Style="{StaticResource buttonLarge}" HeightRequest="120" Command="{Binding OperationButtonCommand}" CommandParameter="+"/>
+            <Button Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Text="+"   Style="{StaticResource buttonLarge}" HeightRequest="120" WidthRequest="60" Command="{Binding OperationButtonCommand}" CommandParameter="+"/>
 
             <Button  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Text="=" Style="{StaticResource buttonLarge}" WidthRequest="180" Command="{Binding ResultButtonCommand}" CommandParameter="=" />
             
